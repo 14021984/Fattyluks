@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="pl" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Artist | Portfolio</title>
+    <meta name="description" content="Portfolio - Koder, Artysta, App Developer. Tworzę nowoczesne aplikacje webowe i mobilne.">
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand glitch-text" href="#hero" data-text="<CODE/>">
+                <span class="brand-bracket">&lt;</span>CODE<span class="brand-bracket">/&gt;</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="toggler-line"></span>
+                <span class="toggler-line"></span>
+                <span class="toggler-line"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">O mnie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Umiejętności</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projekty</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="container position-relative">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-8">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <span class="badge-dot"></span>
+                            Dostępny do współpracy
+                        </div>
+                        <h1 class="hero-title">
+                            <span class="hero-greeting">Cześć, jestem</span>
+                            <span class="hero-name">
+                                <span class="name-text" id="typedName"></span>
+                                <span class="cursor">|</span>
+                            </span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            <span class="typing-text" id="typedRole"></span>
+                        </p>
+                        <p class="hero-description">
+                            Tworzę <strong>nowoczesne aplikacje</strong>, które łączą estetykę z funkcjonalnością.
+                            Każdy projekt to unikalna podróż od pomysłu do kodu.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-neon">
+                                <span>Zobacz projekty</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <a href="#contact" class="btn btn-ghost">
+                                <i class="bi bi-chat-dots"></i>
+                                <span>Porozmawiajmy</span>
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="50">0</span><span class="stat-plus">+</span>
+                                <span class="stat-label">Projektów</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+                                <span class="stat-label">Lat doświadczenia</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="30">0</span><span class="stat-plus">+</span>
+                                <span class="stat-label">Klientów</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block">
+                    <div class="hero-visual">
+                        <div class="code-window">
+                            <div class="code-header">
+                                <span class="code-dot red"></span>
+                                <span class="code-dot yellow"></span>
+                                <span class="code-dot green"></span>
+                                <span class="code-filename">portfolio.js</span>
+                            </div>
+                            <pre class="code-body"><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
+  <span class="code-prop">name</span>: <span class="code-string">"Code Artist"</span>,
+  <span class="code-prop">role</span>: <span class="code-string">"Full Stack Dev"</span>,
+  <span class="code-prop">passion</span>: <span class="code-string">"Creating"</span>,
+  <span class="code-prop">skills</span>: [
+    <span class="code-string">"React"</span>, <span class="code-string">"Node.js"</span>,
+    <span class="code-string">"TypeScript"</span>, <span class="code-string">"Python"</span>
+  ],
+  <span class="code-method">create</span>() {
+    <span class="code-keyword">return</span> <span class="code-string">"magic ✨"</span>;
+  }
+};</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Przewiń w dół</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;about&gt;</span>
+                <h2 class="section-title">O mnie</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5">
+                    <div class="about-image-wrapper">
+                        <div class="about-image">
+                            <div class="image-placeholder">
+                                <i class="bi bi-person-circle"></i>
+                            </div>
+                        </div>
+                        <div class="about-image-decoration"></div>
+                        <div class="floating-badges">
+                            <span class="float-badge" style="--delay: 0s"><i class="bi bi-braces"></i> Clean Code</span>
+                            <span class="float-badge" style="--delay: 0.5s"><i class="bi bi-palette"></i> UI/UX</span>
+                            <span class="float-badge" style="--delay: 1s"><i class="bi bi-phone"></i> Mobile First</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="about-content">
+                        <h3 class="about-heading">
+                            Koder z duszą artysty
+                            <span class="heading-accent"></span>
+                        </h3>
+                        <p class="about-text">
+                            Jestem full-stack developerem, który traktuje kod jak sztukę. Każdy wiersz kodu
+                            to przemyślana decyzja, każdy interfejs to doświadczenie, które chcę, aby użytkownik
+                            zapamiętał.
+                        </p>
+                        <p class="about-text">
+                            Specjalizuję się w tworzeniu nowoczesnych aplikacji webowych i mobilnych,
+                            łącząc najnowsze technologie z ponadczasowymi zasadami designu. Wierzę,
+ że najlepsze
+                            oprogramowanie powstaje na styku kreatywności i inżynierii.
+                        </p>
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="bi bi-lightning-charge"></i>
+                                </div>
+                                <div>
+                                    <h4>Wydajność</h4>
+                                    <p>Optymalizacja na każdym etapie</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="bi bi-phone"></i>
+                                </div>
+                                <div>
+                                    <h4>Responsywność</h4>
+                                    <p>Mobile-first approach</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="bi bi-shield-check"></i>
+                                </div>
+                                <div>
+                                    <h4>Bezpieczeństwo</h4>
+                                    <p>Best practices zawsze</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="section-close">&lt;/about&gt;</span>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills-section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;skills&gt;</span>
+                <h2 class="section-title">Umiejętności</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <!-- Frontend -->
+                <div class="skill-category" data-reveal>
+                    <div class="category-header">
+                        <div class="category-icon"><i class="bi bi-palette"></i></div>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-skill="95">
+                            <div class="skill-info">
+                                <span class="skill-name">React / Next.js</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="90">
+                            <div class="skill-info">
+                                <span class="skill-name">TypeScript</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="92">
+                            <div class="skill-info">
+                                <span class="skill-name">CSS / Tailwind</span>
+                                <span class="skill-percent">92%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="88">
+                            <div class="skill-info">
+                                <span class="skill-name">Vue.js</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="skill-category" data-reveal>
+                    <div class="category-header">
+                        <div class="category-icon"><i class="bi bi-server"></i></div>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-skill="92">
+                            <div class="skill-info">
+                                <span class="skill-name">Node.js / Express</span>
+                                <span class="skill-percent">92%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="85">
+                            <div class="skill-info">
+                                <span class="skill-name">Python / Django</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="88">
+                            <div class="skill-info">
+                                <span class="skill-name">PostgreSQL / MongoDB</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="80">
+                            <div class="skill-info">
+                                <span class="skill-name">GraphQL</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DevOps & Tools -->
+                <div class="skill-category" data-reveal>
+                    <div class="category-header">
+                        <div class="category-icon"><i class="bi bi-gear"></i></div>
+                        <h3>DevOps & Narzędzia</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-skill="87">
+                            <div class="skill-info">
+                                <span class="skill-name">Docker / K8s</span>
+                                <span class="skill-percent">87%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="90">
+                            <div class="skill-info">
+                                <span class="skill-name">Git / CI/CD</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="82">
+                            <div class="skill-info">
+                                <span class="skill-name">AWS / GCP</span>
+                                <span class="skill-percent">82%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="78">
+                            <div class="skill-info">
+                                <span class="skill-name">Testing (Jest/Cypress)</span>
+                                <span class="skill-percent">78%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile -->
+                <div class="skill-category" data-reveal>
+                    <div class="category-header">
+                        <div class="category-icon"><i class="bi bi-phone"></i></div>
+                        <h3>Mobile</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item" data-skill="88">
+                            <div class="skill-info">
+                                <span class="skill-name">React Native</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="75">
+                            <div class="skill-info">
+                                <span class="skill-name">Flutter</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-skill="80">
+                            <div class="skill-info">
+                                <span class="skill-name">PWA</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="section-close">&lt;/skills&gt;</span>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects-section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;projects&gt;</span>
+                <h2 class="section-title">Projekty</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <!-- Project Filters -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">Wszystkie</button>
+                <button class="filter-btn" data-filter="web">Web App</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="fullstack" data-reveal>
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="bi bi-cart3"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Prisma</span>
+                            <span class="tag">Stripe</span>
+                        </div>
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-desc">
+                            Nowoczesna platforma e-commerce z systemem płności, panelem administracyjnym
+                            i zaawansowaną analityką sprzedaży.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="mobile" data-reveal>
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="bi bi-chat-dots"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">React Native</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">WebRTC</span>
+                        </div>
+                        <h3 class="project-title">ChatApp Mobile</h3>
+                        <p class="project-desc">
+                            Aplikacja mobilna do komunikacji z funkcją wideorozmów,
+                            szyfrowanymi wiadomościami i udostę plików.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="web" data-reveal>
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="bi bi-bar-chart"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">D3.js</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <h3 class="project-title">Analytics Dashboard</h3>
+                        <p class="project-desc">
+                            Interaktywny dashboard analityczny z wizualizacjami danych w czasie
+                            rzeczywistym i eksportem raportów.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="fullstack" data-reveal>
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="bi bi-kanban"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Socket.io</span>
+                        </div>
+                        <h3 class="project-title">TaskFlow Pro</h3>
+                        <p class="project-desc">
+                            System zarządzania projektami z tablicami Kanban,
+                            współpracą w czasie rzeczywistym i automatyzacją workflow.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-category="web" data-reveal>
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="bi bi-music-note-beamed"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Tailwind</span>
+                            <span class="tag">Spotify API</span>
+                        </div>
+                        <h3 class="project-title">MusicViz</h3>
+                        <p class="project-desc">
+                            Wizualizator muzyki z generatywną grafiką 3D,
+                            integracją ze Spotify i trybem koncertowym.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card" data-category="mobile" data-reveal>
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">HealthKit</span>
+                        </div>
+                        <h3 class="project-title">FitTrack</h3>
+                        <p class="project-desc">
+                            Aplikacja fitness z treningami personalizowanymi,
+                            śledzeniem postępów i integracją z wearable devices.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="section-close">&lt;/projects&gt;</span>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;contact&gt;</span>
+                <h2 class="section-title">Kontakt</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <div class="contact-info">
+                        <h3 class="contact-heading">Porozmawiajmy o Twoim projekcie</h3>
+                        <p class="contact-text">
+                            Masz pomysł na aplikację? Szukasz developera do zespołu?
+                            A może chcesz po prostu pogadać o kodzie? Napisz!
+                        </p>
+                        <div class="contact-methods">
+                            <a href="mailto:hello@codeartist.dev" class="contact-method">
+                                <div class="method-icon"><i class="bi bi-envelope"></i></div>
+                                <div>
+                                    <span class="method-label">Email</span>
+                                    <span class="method-value">hello@codeartist.dev</span>
+                                </div>
+                            </a>
+                            <a href="#" class="contact-method">
+                                <div class="method-icon"><i class="bi bi-github"></i></div>
+                                <div>
+                                    <span class="method-label">GitHub</span>
+                                    <span class="method-value">github.com/codeartist</span>
+                                </div>
+                            </a>
+                            <a href="#" class="contact-method">
+                                <div class="method-icon"><i class="bi bi-linkedin"></i></div>
+                                <div>
+                                    <span class="method-label">LinkedIn</span>
+                                    <span class="method-value">linkedin.com/in/codeartist</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <form class="contact-form" id="contactForm">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="Imię" required>
+                                    <label for="name">Imię</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" placeholder="Temat">
+                                    <label for="subject">Temat</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="message" placeholder="Wiadomość" style="height: 160px" required></textarea>
+                                    <label for="message">Wiadomość</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-neon w-100">
+                                    <span>Wyślij wiadomość</span>
+                                    <i class="bi bi-send"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <span class="section-close">&lt;/contact&gt;</span>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="brand-bracket">&lt;</span>CODE<span class="brand-bracket">/&gt;</span>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="bi bi-github"></i></a>
+                    <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
+                </div>
+                <p class="footer-copy">
+                    &copy; 2026 Code Artist. Stworzone z <i class="bi bi-heart-fill text-danger"></i> i kawą.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
