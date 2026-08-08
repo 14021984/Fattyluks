@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Artist | Portfolio</title>
+    <title>Łukasz Macioszczyk | Portfolio</title>
     <meta name="description" content="Portfolio - Koder, Artysta, App Developer. Tworzę nowoczesne aplikacje webowe i mobilne.">
 
     <!-- Bootstrap 5.3 -->
@@ -67,32 +67,16 @@
                             <span class="typing-text" id="typedRole"></span>
                         </p>
                         <p class="hero-description">
-                            Tworzę <strong>nowoczesne aplikacje</strong>, które łączą estetykę z funkcjonalnością.
-                            Każdy projekt to unikalna podróż od pomysłu do kodu.
+                            <strong>DJ &amp; Music Creator</strong> oraz twórca <strong>nowoczesnych aplikacji</strong>,
+                            które łączą estetykę z funkcjonalnością. Każdy projekt to unikalna podróż od pomysłu do kodu.
                         </p>
-                        <div class="hero-actions">
-                            <a href="#projects" class="btn btn-neon">
-                                <span>Zobacz projekty</span>
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                            <a href="#contact" class="btn btn-ghost">
-                                <i class="bi bi-chat-dots"></i>
-                                <span>Porozmawiajmy</span>
-                            </a>
-                        </div>
+                        
                         <div class="hero-stats">
                             <div class="stat-item">
-                                <span class="stat-number" data-count="50">0</span><span class="stat-plus">+</span>
+                                <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
                                 <span class="stat-label">Projektów</span>
                             </div>
-                            <div class="stat-item">
-                                <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
-                                <span class="stat-label">Lat doświadczenia</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number" data-count="30">0</span><span class="stat-plus">+</span>
-                                <span class="stat-label">Klientów</span>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -106,7 +90,7 @@
                                 <span class="code-filename">portfolio.js</span>
                             </div>
                             <pre class="code-body"><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
-  <span class="code-prop">name</span>: <span class="code-string">"Code Artist"</span>,
+  <span class="code-prop">name</span>: <span class="code-string">"Łukasz Macioszczyk"</span>,
   <span class="code-prop">role</span>: <span class="code-string">"Full Stack Dev"</span>,
   <span class="code-prop">passion</span>: <span class="code-string">"Creating"</span>,
   <span class="code-prop">skills</span>: [
@@ -142,15 +126,13 @@
                 <div class="col-lg-5">
                     <div class="about-image-wrapper">
                         <div class="about-image">
-                            <div class="image-placeholder">
-                                <i class="bi bi-person-circle"></i>
-                            </div>
+                            <img src="img/profile.jpg" alt="Łukasz Macioszczyk" class="profile-img">
                         </div>
                         <div class="about-image-decoration"></div>
                         <div class="floating-badges">
                             <span class="float-badge" style="--delay: 0s"><i class="bi bi-braces"></i> Clean Code</span>
                             <span class="float-badge" style="--delay: 0.5s"><i class="bi bi-palette"></i> UI/UX</span>
-                            <span class="float-badge" style="--delay: 1s"><i class="bi bi-phone"></i> Mobile First</span>
+                            
                         </div>
                     </div>
                 </div>
@@ -187,7 +169,7 @@
                                 </div>
                                 <div>
                                     <h4>Responsywność</h4>
-                                    <p>Mobile-first approach</p>
+                                    <p>Aplikations-first approach</p>
                                 </div>
                             </div>
                             <div class="highlight-item">
@@ -205,6 +187,99 @@
             </div>
         </div>
         <span class="section-close">&lt;/about&gt;</span>
+    </section>
+
+    <!-- DJ Music Creator Section -->
+    <section class="section music-section" id="music">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;music&gt;</span>
+                <h2 class="section-title">DJ Music Creator</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="music-player-wrapper" data-reveal>
+                <div class="music-player">
+                    <div class="player-album-art">
+                        <div class="album-visualizer">
+                            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                        <div class="album-info">
+                            <i class="bi bi-music-note-beamed"></i>
+                            <span class="album-title">FATTYLUKS</span>
+                            <span class="album-subtitle">Music Collection</span>
+                        </div>
+                    </div>
+                    
+                    <div class="player-controls">
+                        <div class="now-playing">
+                            <span class="track-name" id="trackName">Wybierz utwór</span>
+                            <span class="artist-name">Łukasz Macioszczyk</span>
+                        </div>
+                        
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="progressBar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <div class="time-info">
+                                <span id="currentTime">0:00</span>
+                                <span id="duration">0:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="player-buttons">
+                            <button class="player-btn" id="prevBtn"><i class="bi bi-skip-start-fill"></i></button>
+                            <button class="player-btn play-btn" id="playBtn"><i class="bi bi-play-fill"></i></button>
+                            <button class="player-btn" id="nextBtn"><i class="bi bi-skip-end-fill"></i></button>
+                        </div>
+                        
+                        <div class="volume-control">
+                            <i class="bi bi-volume-up"></i>
+                            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tracklist">
+                    <h4 class="tracklist-title"><i class="bi bi-list-ul"></i> Playlista</h4>
+                    <ul class="tracks" id="tracklist">
+                        <li class="track-item" data-src="music/Miał Miałek.mp3" data-index="0">
+                            <span class="track-number">01</span>
+                            <div class="track-info">
+                                <span class="track-title">Miał Miałek</span>
+                                <span class="track-album">FATTYLUKS</span>
+                            </div>
+                            <span class="track-duration">--:--</span>
+                            <i class="bi bi-play-circle track-play-icon"></i>
+                        </li>
+                        <li class="track-item" data-src="music/The Viev.mp3" data-index="1">
+                            <span class="track-number">02</span>
+                            <div class="track-info">
+                                <span class="track-title">The Viev</span>
+                                <span class="track-album">FATTYLUKS</span>
+                            </div>
+                            <span class="track-duration">--:--</span>
+                            <i class="bi bi-play-circle track-play-icon"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <a href="https://soundcloud.com/fattyluks" target="_blank" class="soundcloud-banner" data-reveal>
+                <div class="soundcloud-content">
+                    <i class="bi bi-soundwave"></i>
+                    <div class="soundcloud-text">
+                        <span class="soundcloud-label">Słuchaj na</span>
+                        <span class="soundcloud-name">SoundCloud</span>
+                    </div>
+                    <i class="bi bi-box-arrow-up-right soundcloud-arrow"></i>
+                </div>
+            </a>
+        </div>
+        <span class="section-close">&lt;/music&gt;</span>
     </section>
 
     <!-- Skills Section -->
@@ -374,68 +449,113 @@
                 <div class="section-line"></div>
             </div>
 
-            <!-- Project Filters -->
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">Wszystkie</button>
-                <button class="filter-btn" data-filter="web">Web App</button>
-                <button class="filter-btn" data-filter="mobile">Mobile</button>
-                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-            </div>
+           
 
             <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card" data-category="fullstack" data-reveal>
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="bi bi-cart3"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <a href="#" class="project-link"><i class="bi bi-arrow-up-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="tag">Next.js</span>
-                            <span class="tag">Prisma</span>
-                            <span class="tag">Stripe</span>
-                        </div>
-                        <h3 class="project-title">E-Commerce Platform</h3>
-                        <p class="project-desc">
-                            Nowoczesna platforma e-commerce z systemem płności, panelem administracyjnym
-                            i zaawansowaną analityką sprzedaży.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card" data-category="mobile" data-reveal>
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="bi bi-chat-dots"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <a href="#" class="project-link"><i class="bi bi-arrow-up-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="tag">React Native</span>
-                            <span class="tag">Firebase</span>
-                            <span class="tag">WebRTC</span>
-                        </div>
-                        <h3 class="project-title">ChatApp Mobile</h3>
-                        <p class="project-desc">
-                            Aplikacja mobilna do komunikacji z funkcją wideorozmów,
-                            szyfrowanymi wiadomościami i udostę plików.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
+                <!-- Project 1 - FATTYLUKS 4 Deck (6 slides) -->
                 <div class="project-card" data-category="web" data-reveal>
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="bi bi-bar-chart"></i>
+                    <div class="project-carousel" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/fattyluks-4deck/slide1.png" alt="Interfejs DJ" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/fattyluks-4deck/slide2.png" alt="Talerze 4-deck" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/fattyluks-4deck/slide3.png" alt="Mikser audio" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/fattyluks-4deck/slide4.png" alt="Efekty" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/fattyluks-4deck/slide5.png" alt="Sampler" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/fattyluks-4deck/slide6.png" alt="Mix" class="carousel-img">
+                            </div>
+                        </div>
+                        <button class="carousel-btn carousel-prev" type="button"><i class="bi bi-chevron-left"></i></button>
+                        <button class="carousel-btn carousel-next" type="button"><i class="bi bi-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">DSP</span>
+                        </div>
+                        <h3 class="project-title">FATTYLUKS 4 Deck Player</h3>
+                        <p class="project-desc">
+                            Zaawansowany odtwarzacz DJ z obsługą 4 talerzy, efektami audio
+                            i precyzyjnymi kontrolami miksu w czasie rzeczywistym.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 2 - FATTYLUKS Drum Kit (3 slides) -->
+                <div class="project-card" data-category="web" data-reveal>
+                    <div class="project-carousel" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/fattyluks-drumkit/slide1.png" alt="Drum Machine" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/fattyluks-drumkit/slide2.png" alt="Pads MIDI" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/fattyluks-drumkit/slide3.png" alt="Sequencer" class="carousel-img">
+                            </div>
+                        </div>
+                        <button class="carousel-btn carousel-prev" type="button"><i class="bi bi-chevron-left"></i></button>
+                        <button class="carousel-btn carousel-next" type="button"><i class="bi bi-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">MIDI</span>
+                        </div>
+                        <h3 class="project-title">FATTYLUKS Drum Kit Pro 2026v2</h3>
+                        <p class="project-desc">
+                            Profesjonalny drum machine 
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 3 - WHITEBOARD OS (5 slides) -->
+                <div class="project-card" data-category="fullstack" data-reveal>
+                    <div class="project-carousel" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/whiteboard-os/slide1.png" alt="Whiteboard AI" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/whiteboard-os/slide2.png" alt="Narzędzia rysowania" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/whiteboard-os/slide3.png" alt="Współpraca live" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/whiteboard-os/slide4.png" alt="AI Assistant" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/whiteboard-os/slide5.png" alt="Eksport" class="carousel-img">
+                            </div>
+                        </div>
+                        <button class="carousel-btn carousel-prev" type="button"><i class="bi bi-chevron-left"></i></button>
+                        <button class="carousel-btn carousel-next" type="button"><i class="bi bi-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
                         </div>
                         <div class="project-overlay">
                             <a href="#" class="project-link"><i class="bi bi-arrow-up-right"></i></a>
@@ -444,46 +564,34 @@
                     <div class="project-content">
                         <div class="project-tags">
                             <span class="tag">React</span>
-                            <span class="tag">D3.js</span>
                             <span class="tag">Python</span>
+                            <span class="tag">AI</span>
                         </div>
-                        <h3 class="project-title">Analytics Dashboard</h3>
+                        <h3 class="project-title">WHITEBOARD OS</h3>
                         <p class="project-desc">
-                            Interaktywny dashboard analityczny z wizualizacjami danych w czasie
-                            rzeczywistym i eksportem raportów.
+                            Interaktywna cyfrowa tablica AI
                         </p>
                     </div>
                 </div>
 
-                <!-- Project 4 -->
-                <div class="project-card" data-category="fullstack" data-reveal>
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="bi bi-kanban"></i>
-                        </div>
-                        <div class="project-overlay">
-                            <a href="#" class="project-link"><i class="bi bi-arrow-up-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="tag">Vue.js</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">Socket.io</span>
-                        </div>
-                        <h3 class="project-title">TaskFlow Pro</h3>
-                        <p class="project-desc">
-                            System zarządzania projektami z tablicami Kanban,
-                            współpracą w czasie rzeczywistym i automatyzacją workflow.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
+                <!-- Project 4 - PIXIEARTS (3 slides) -->
                 <div class="project-card" data-category="web" data-reveal>
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="bi bi-music-note-beamed"></i>
+                    <div class="project-carousel" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/pixiearts/slide1.png" alt="Edytor pikselowy" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/pixiearts/slide2.png" alt="Canvas 2D" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/pixiearts/slide3.png" alt="Animacje" class="carousel-img">
+                            </div>
+                        </div>
+                        <button class="carousel-btn carousel-prev" type="button"><i class="bi bi-chevron-left"></i></button>
+                        <button class="carousel-btn carousel-next" type="button"><i class="bi bi-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
                         </div>
                         <div class="project-overlay">
                             <a href="#" class="project-link"><i class="bi bi-arrow-up-right"></i></a>
@@ -491,23 +599,37 @@
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="tag">Next.js</span>
-                            <span class="tag">Tailwind</span>
-                            <span class="tag">Spotify API</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Shaders</span>
                         </div>
-                        <h3 class="project-title">MusicViz</h3>
+                        <h3 class="project-title">PIXIEARTS</h3>
                         <p class="project-desc">
-                            Wizualizator muzyki z generatywną grafiką 3D,
-                            integracją ze Spotify i trybem koncertowym.
+                            Kreatywna platforma do tworzenia grafik pikselowych 
                         </p>
                     </div>
                 </div>
 
-                <!-- Project 6 -->
+                <!-- Project 5 - FUNNYMEME (4 slides) -->
                 <div class="project-card" data-category="mobile" data-reveal>
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="bi bi-heart-pulse"></i>
+                    <div class="project-carousel" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/funnymeme/slide1.png" alt="Generator memów" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/funnymeme/slide2.png" alt="Edytor grafiki" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/funnymeme/slide3.png" alt="Udostępnianie" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/funnymeme/slide4.png" alt="Galeria" class="carousel-img">
+                            </div>
+                        </div>
+                        <button class="carousel-btn carousel-prev" type="button"><i class="bi bi-chevron-left"></i></button>
+                        <button class="carousel-btn carousel-next" type="button"><i class="bi bi-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
                         </div>
                         <div class="project-overlay">
                             <a href="#" class="project-link"><i class="bi bi-arrow-up-right"></i></a>
@@ -515,14 +637,13 @@
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="tag">Flutter</span>
-                            <span class="tag">Firebase</span>
-                            <span class="tag">HealthKit</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Image API</span>
+                            <span class="tag">Social</span>
                         </div>
-                        <h3 class="project-title">FitTrack</h3>
+                        <h3 class="project-title">FUNNYMEME</h3>
                         <p class="project-desc">
-                            Aplikacja fitness z treningami personalizowanymi,
-                            śledzeniem postępów i integracją z wearable devices.
+                            Aplikacja do tworzenia i udostępniania memów z edytorem graficznym
                         </p>
                     </div>
                 </div>
@@ -548,27 +669,21 @@
                             A może chcesz po prostu pogadać o kodzie? Napisz!
                         </p>
                         <div class="contact-methods">
-                            <a href="mailto:hello@codeartist.dev" class="contact-method">
+                            <a href="mailto:hello@lukaszmacioszczyk.dev" class="contact-method">
                                 <div class="method-icon"><i class="bi bi-envelope"></i></div>
                                 <div>
                                     <span class="method-label">Email</span>
-                                    <span class="method-value">hello@codeartist.dev</span>
+                                    <span class="method-value">lukas.macioszczyk@protonmail.com</span>
                                 </div>
                             </a>
                             <a href="#" class="contact-method">
                                 <div class="method-icon"><i class="bi bi-github"></i></div>
                                 <div>
                                     <span class="method-label">GitHub</span>
-                                    <span class="method-value">github.com/codeartist</span>
+                                    <span class="method-value">https://github.com/14021984/Fattyluks</span>
                                 </div>
                             </a>
-                            <a href="#" class="contact-method">
-                                <div class="method-icon"><i class="bi bi-linkedin"></i></div>
-                                <div>
-                                    <span class="method-label">LinkedIn</span>
-                                    <span class="method-value">linkedin.com/in/codeartist</span>
-                                </div>
-                            </a>
+                           
                         </div>
                     </div>
                 </div>
@@ -620,14 +735,9 @@
                 <div class="footer-brand">
                     <span class="brand-bracket">&lt;</span>CODE<span class="brand-bracket">/&gt;</span>
                 </div>
-                <div class="footer-social">
-                    <a href="#" class="social-link"><i class="bi bi-github"></i></a>
-                    <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
-                    <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
-                </div>
+            
                 <p class="footer-copy">
-                    &copy; 2026 Code Artist. Stworzone z <i class="bi bi-heart-fill text-danger"></i> i kawą.
+                    &copy; 2026 FATTYLUKS. Stworzone z <i class="bi bi-heart-fill text-danger"></i> i kawą.
                 </p>
             </div>
         </div>

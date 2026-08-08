@@ -295,13 +295,187 @@
         }, 5000);
     }
 
+    /* ---- Project Carousels ---- */
+    function initCarousels() {
+        const carousels = $$('.project-carousel');
+        if (!carousels.length) return;
+
+        carousels.forEach(carousel => {
+            const items = $$('.carousel-item', carousel);
+            const dots = $$('.dot', carousel);
+            const prevBtn = $('.carousel-prev', carousel);
+            const nextBtn = $('.carousel-next', carousel);
+            let current = 0;
+            let autoPlayInterval;
+
+            function goTo(index) {
+                items[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                current = (index + items.length) % items.length;
+                items[current].classList.add('active');
+                dots[current].classList.add('active');
+            }
+
+            function next() { goTo(current + 1); }
+            function prev() { goTo(current - 1); }
+
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(next, 3500);
+            }
+
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+
+            if (prevBtn) prevBtn.addEventListener('click', () => { stopAutoPlay(); prev(); startAutoPlay(); });
+            if (nextBtn) nextBtn.addEventListener('click', () => { stopAutoPlay(); next(); startAutoPlay(); });
+
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => { stopAutoPlay(); goTo(i); startAutoPlay(); });
+            });
+
+            carousel.addEventListener('mouseenter', stopAutoPlay);
+            carousel.addEventListener('mouseleave', startAutoPlay);
+
+            startAutoPlay();
+        });
+    }
+
+    /* ---- Music Player ---- */
+    function initMusicPlayer() {
+        const playBtn = $('#playBtn');
+        const prevBtn = $('#prevBtn');
+        const nextBtn = $('#nextBtn');
+        const progressFill = $('#progressFill');
+        const progressBar = $('#progressBar');
+        const currentTimeEl = $('#currentTime');
+        const durationEl = $('#duration');
+        const volumeSlider = $('#volumeSlider');
+        const trackNameEl = $('#trackName');
+        const trackItems = $$('.track-item');
+        const musicPlayer = $('.music-player');
+        
+        if (!playBtn || !trackItems.length) return;
+        
+        let audio = new Audio();
+        let currentTrack = 0;
+        let isPlaying = false;
+        
+        function loadTrack(index) {
+            const track = trackItems[index];
+            const src = track.dataset.src;
+            audio.src = src;
+            audio.load();
+            
+            trackItems.forEach(t => t.classList.remove('active'));
+            track.classList.add('active');
+            
+            const title = track.querySelector('.track-title').textContent;
+            trackNameEl.textContent = title;
+            currentTrack = index;
+        }
+        
+        function playTrack() {
+            audio.play();
+            isPlaying = true;
+            playBtn.innerHTML = '<i class="bi bi-pause-fill"></i>';
+            musicPlayer.classList.add('playing');
+        }
+        
+        function pauseTrack() {
+            audio.pause();
+            isPlaying = false;
+            playBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
+            musicPlayer.classList.remove('playing');
+        }
+        
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+        
+        playBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                pauseTrack();
+            } else {
+                if (audio.src) {
+                    playTrack();
+                } else {
+                    loadTrack(0);
+                    playTrack();
+                }
+            }
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            currentTrack = (currentTrack - 1 + trackItems.length) % trackItems.length;
+            loadTrack(currentTrack);
+            if (isPlaying) playTrack();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            currentTrack = (currentTrack + 1) % trackItems.length;
+            loadTrack(currentTrack);
+            if (isPlaying) playTrack();
+        });
+        
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                const percent = (audio.currentTime / audio.duration) * 100;
+                progressFill.style.width = percent + '%';
+                currentTimeEl.textContent = formatTime(audio.currentTime);
+                durationEl.textContent = formatTime(audio.duration);
+            }
+        });
+        
+        audio.addEventListener('ended', () => {
+            currentTrack = (currentTrack + 1) % trackItems.length;
+            loadTrack(currentTrack);
+            playTrack();
+        });
+        
+        progressBar.addEventListener('click', (e) => {
+            if (audio.duration) {
+                const rect = progressBar.getBoundingClientRect();
+                const percent = (e.clientX - rect.left) / rect.width;
+                audio.currentTime = percent * audio.duration;
+            }
+        });
+        
+        volumeSlider.addEventListener('input', (e) => {
+            audio.volume = e.target.value / 100;
+        });
+        
+        trackItems.forEach((track, index) => {
+            track.addEventListener('click', () => {
+                loadTrack(index);
+                playTrack();
+            });
+        });
+        
+        audio.volume = 0.8;
+        
+        // Get track durations
+        trackItems.forEach((track, index) => {
+            const tempAudio = new Audio();
+            tempAudio.src = track.dataset.src;
+            tempAudio.addEventListener('loadedmetadata', () => {
+                const durationEl = track.querySelector('.track-duration');
+                if (durationEl) {
+                    durationEl.textContent = formatTime(tempAudio.duration);
+                }
+            });
+        });
+    }
+
     /* ---- Initialize Everything ---- */
     function init() {
         // Typing effects
         const nameEl = $('#typedName');
         const roleEl = $('#typedRole');
 
-        if (nameEl) typeName(nameEl, 'Code Artist', 120);
+        if (nameEl) typeName(nameEl, 'Łukasz Macioszczyk', 120);
 
         if (roleEl) {
             setTimeout(() => {
@@ -309,7 +483,7 @@
                     'Full Stack Developer',
                     'UI/UX Designer',
                     'App Developer',
-                    'Code Artist'
+                    'DJ & Music Creator'
                 ], 2000);
             }, 1500);
         }
@@ -323,6 +497,8 @@
         initParticles();
         initContactForm();
         initGlitch();
+        initCarousels();
+        initMusicPlayer();
     }
 
     // Run when DOM is ready
