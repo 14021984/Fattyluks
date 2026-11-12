@@ -469,6 +469,89 @@
         });
     }
 
+    /* ---- Image Lightbox ---- */
+    function initLightbox() {
+        const lightbox = $('#lightbox');
+        if (!lightbox) return;
+
+        const imgEl = $('#lightboxImg');
+        const captionEl = $('#lightboxCaption');
+        const openLink = $('#lightboxOpenLink');
+        const closeBtn = $('#lightboxClose');
+        const prevBtn = $('#lightboxPrev');
+        const nextBtn = $('#lightboxNext');
+
+        let images = [];
+        let index = 0;
+
+        function render() {
+            const current = images[index];
+            if (!current) return;
+
+            imgEl.src = current.src;
+            imgEl.alt = current.alt || '';
+            captionEl.textContent = `${current.alt || 'Podgląd'} (${index + 1}/${images.length})`;
+            openLink.href = current.src;
+
+            const multiple = images.length > 1;
+            prevBtn.hidden = !multiple;
+            nextBtn.hidden = !multiple;
+        }
+
+        function open(list, startIndex) {
+            if (!list.length) return;
+            images = list;
+            index = startIndex < 0 ? 0 : startIndex;
+            render();
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('lightbox-open');
+            closeBtn.focus();
+        }
+
+        function close() {
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('lightbox-open');
+        }
+
+        function step(dir) {
+            if (images.length < 2) return;
+            index = (index + dir + images.length) % images.length;
+            render();
+        }
+
+        // Klik w zdjecie projektu (poza strzalkami i kropkami) otwiera powiekszenie
+        $$('.project-carousel').forEach(carousel => {
+            carousel.addEventListener('click', (e) => {
+                if (e.target.closest('.carousel-btn, .carousel-dots, .dot')) return;
+
+                const all = $$('.carousel-img', carousel);
+                if (!all.length) return;
+
+                e.preventDefault();
+                const activeImg = $('.carousel-item.active .carousel-img', carousel) || all[0];
+                open(all, all.indexOf(activeImg));
+            });
+        });
+
+        closeBtn.addEventListener('click', close);
+        prevBtn.addEventListener('click', (e) => { e.stopPropagation(); step(-1); });
+        nextBtn.addEventListener('click', (e) => { e.stopPropagation(); step(1); });
+
+        // Klik w tlo zamyka podglad
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) close();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') close();
+            else if (e.key === 'ArrowRight') step(1);
+            else if (e.key === 'ArrowLeft') step(-1);
+        });
+    }
+
     /* ---- Initialize Everything ---- */
     function init() {
         // Typing effects
@@ -498,6 +581,7 @@
         initContactForm();
         initGlitch();
         initCarousels();
+        initLightbox();
         initMusicPlayer();
     }
 
